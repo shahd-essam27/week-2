@@ -1,0 +1,55 @@
+task selected = text summarization 
+----------------------------------------------------------------------------
+first model ->facebook/bart-large-cnn
+license: mit
+Model size
+   -0.4B params
+Tensor type
+   -F32
+ metrics:
+ ********
+  name: ROUGE-1
+  type: rouge
+  value: 42.9486
+  verified: true
+  name: ROUGE-2
+  type: rouge
+  value: 20.8149
+  verified: true
+  name: ROUGE-L
+  type: rouge
+  value: 30.6186
+  verified: true
+  name: ROUGE-LSUM
+  type: rouge
+  value: 40.0376
+  verified: true
+  name: loss
+  type: loss
+  value: 2.529000997543335
+  verified: true
+  name: gen_len
+  type: gen_len
+  value: 78.5866
+  verified: true
+Intended uses & limitations
+You can use this model for text summarization.
+-------------------------------------------------------------            
+second model ->Falconsai/text_summarization
+license: apache-2.0
+language:
+  - en
+Model size:
+  - 60.5M params
+Tensor type:
+  - F32
+intended usage :
+  -Text Summarization:The primary intended use of this model is to generate concise and coherent text summaries.
+   It is well-suited for applications that involve summarizing lengthy documents, news articles, and textual content.  
+Training Stats
+*************
+Evaluation Loss: 0.012345678901234567
+Evaluation Rouge Score: 0.95 (F1)
+Evaluation Runtime: 2.3456
+Evaluation Samples per Second: 1234.56
+Evaluation Steps per Second: 45.678
