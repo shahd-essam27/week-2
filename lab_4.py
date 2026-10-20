@@ -1,5 +1,15 @@
 import gradio as gr
-from inference import predict
+ #from lab2_2 import predict
+from transformers import pipeline
+
+# Initialize the classifier once when the file is imported
+classifier = pipeline("text-classification", model="distilbert-base-uncased-finetuned-sst-2-english")
+def predict(text: str) -> dict:
+    if not text.strip():
+        return {"error": "Input text is empty."} # Changed to a dict for return type consistency
+    
+    result = classifier(text)[0]
+    return {"label": result['label'], "score": round(result['score'], 4)}
 
 def classify_text(text):
     if not text.strip():
